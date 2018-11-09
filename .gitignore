@@ -1,23 +1,77 @@
-# Compiled class file
+##################
+# Compiled files #
+##################
 *.class
 
-# Log file
-*.log
+##################
+# intellij files #
+##################
+*.iml
+.idea
+*/.idea
 
-# BlueJ files
-*.ctxt
+#################
+# eclipse files #
+#################
+/.project
+/.classpath
+/.settings
+/.tern-project
 
-# Mobile Tools for Java (J2ME)
+##################
+# netbeans files #
+##################
+/nb-configuration.xml
+
+#########################
+# maven generated files #
+#########################
+/target
+
+################################
+# Mobile Tools for Java (J2ME) #
+################################
 .mtj.tmp/
 
-# Package Files #
+#############
+# Zip files #
+#############
+*.tar
+*.zip
+*.7z
+*.dmg
+*.gz
+*.iso
+*.rar
 *.jar
 *.war
-*.nar
 *.ear
-*.zip
-*.tar.gz
-*.rar
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+##############
+# Logs files #
+##############
+*.log
+
+#################
+# test-ng files #
+#################
+/test-output
+
+############################
+# Binaries generated files #
+############################
+/bin
+
+################
+# gradle files #
+################
+/build
+/.gradle
+/gradle
+
+##############################################################
+# virtual machine crash logs                                 #
+# see http://www.java.com/en/download/help/error_hotspot.xml #
+##############################################################
 hs_err_pid*
+/pom.xml.bak
