@@ -157,7 +157,7 @@
 				<artifactId>model-object</artifactId>
 				<version>${model-object.version}</version>
 			</dependency>
-
+			<!-- MODEL-CORE DEPENDENCY -->
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
 				<artifactId>model-core</artifactId>
@@ -261,5 +261,62 @@
 			</plugin>
 		</plugins>
 	</build>
+
+
+	<profiles>
+
+		<profile>
+			<id>oss.sonatype.org-staged-release</id>
+			<!-- This is the profile to use for releasing into the staged release 
+				repo. We need to sign the artifacts. -->
+			<activation>
+				<property>
+					<name>performRelease</name>
+					<value>true</value>
+				</property>
+			</activation>
+
+			<distributionManagement>
+				<repository>
+					<id>ossrh</id>
+					<name>Nexus Release Repository</name>
+					<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+				</repository>
+				<snapshotRepository>
+					<id>ossrh</id>
+					<name>Sonatype Nexus Snapshots</name>
+					<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+				</snapshotRepository>
+			</distributionManagement>
+
+			<build>
+				<plugins>
+
+					<plugin>
+						<inherited>true</inherited>
+						<artifactId>maven-javadoc-plugin</artifactId>
+					</plugin>
+
+					<plugin>
+						<inherited>true</inherited>
+						<artifactId>maven-source-plugin</artifactId>
+					</plugin>
+
+					<plugin>
+						<inherited>true</inherited>
+						<groupId>org.sonatype.plugins</groupId>
+						<artifactId>nexus-staging-maven-plugin</artifactId>
+					</plugin>
+
+					<plugin>
+						<inherited>true</inherited>
+						<artifactId>maven-gpg-plugin</artifactId>
+					</plugin>
+
+				</plugins>
+			</build>
+
+		</profile>
+	</profiles>
 
 </project>
