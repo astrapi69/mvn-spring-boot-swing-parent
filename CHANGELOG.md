@@ -1,6 +1,9 @@
 ## Change log
 ----------------------
 
+Version 2.1.2-SNAPSHOT
+-------------
+
 Version 2.1.1
 -------------
 CHANGED:
