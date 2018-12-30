@@ -7,13 +7,13 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.1.0.RELEASE</version>
+		<version>2.1.1.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 
 	<groupId>de.alpharogroup</groupId>
 	<artifactId>mvn-spring-boot-swing-parent</artifactId>
-	<version>2.1</version>
+	<version>2.1.1</version>
 	<packaging>pom</packaging>
 	<inceptionYear>2018</inceptionYear>
 
@@ -40,13 +40,13 @@
 		<xml-apis.version>1.4.01</xml-apis.version>
 		<!-- EXTENSIONS LIB versions -->
 		<file-worker.version>5</file-worker.version>
-		<jcommons-lang.version>4.35</jcommons-lang.version>
+		<jcommons-lang.version>5.1</jcommons-lang.version>
 		<!-- SWING-COMPONENTS version -->
-		<swing-components.version>4.30</swing-components.version>
+		<swing-components.version>5.0.1</swing-components.version>
 		<!-- XML-EXTENSIONS version -->
-		<xml-extensions.version>4.20</xml-extensions.version>
+		<xml-extensions.version>5</xml-extensions.version>
 		<!-- MODEL-DATA version -->
-		<model-data.version>1.6</model-data.version>
+		<model-data.version>1.6.2</model-data.version>
 		<model-api.version>${model-data.version}</model-api.version>
 		<model-core.version>${model-data.version}</model-core.version>
 		<model-object.version>${model-data.version}</model-object.version>
@@ -180,6 +180,16 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-logging</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>ch.qos.logback</groupId>
+					<artifactId>logback-core</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 
 		<dependency>
@@ -261,7 +271,6 @@
 			</plugin>
 		</plugins>
 	</build>
-
 
 	<profiles>
 
