@@ -13,7 +13,7 @@
 
 	<groupId>de.alpharogroup</groupId>
 	<artifactId>mvn-spring-boot-swing-parent</artifactId>
-	<version>2.1.1</version>
+	<version>2.1.2</version>
 	<packaging>pom</packaging>
 	<inceptionYear>2018</inceptionYear>
 
@@ -39,7 +39,7 @@
 		<!-- XML-APIS version -->
 		<xml-apis.version>1.4.01</xml-apis.version>
 		<!-- EXTENSIONS LIB versions -->
-		<file-worker.version>5</file-worker.version>
+		<file-worker.version>5.0.1</file-worker.version>
 		<jcommons-lang.version>5.1</jcommons-lang.version>
 		<!-- SWING-COMPONENTS version -->
 		<swing-components.version>5.0.1</swing-components.version>
@@ -51,6 +51,10 @@
 		<model-core.version>${model-data.version}</model-core.version>
 		<model-object.version>${model-data.version}</model-object.version>
 		<model-type-safe.version>${model-data.version}</model-type-safe.version>
+		<!-- MAVEN GPG PLUGIN version -->
+		<maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
+		<!-- NEXUS STAGING MAVEN PLUGIN version -->
+		<nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
 	</properties>
 
 	<organization>
@@ -315,11 +319,28 @@
 						<inherited>true</inherited>
 						<groupId>org.sonatype.plugins</groupId>
 						<artifactId>nexus-staging-maven-plugin</artifactId>
+						<version>${nexus-staging-maven-plugin.version}</version>
+						<extensions>true</extensions>
+						<configuration>
+							<serverId>ossrh</serverId>
+							<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+							<autoReleaseAfterClose>true</autoReleaseAfterClose>
+						</configuration>
 					</plugin>
 
 					<plugin>
 						<inherited>true</inherited>
 						<artifactId>maven-gpg-plugin</artifactId>
+						<version>${maven-gpg-plugin.version}</version>
+						<executions>
+							<execution>
+								<id>sign-artifacts</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>sign</goal>
+								</goals>
+							</execution>
+						</executions>
 					</plugin>
 
 				</plugins>
