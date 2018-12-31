@@ -23,7 +23,7 @@ Add as parent project in the `pom.xml` file:
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>mvn-spring-boot-swing-parent</artifactId>
-		<version>2.1.2</version>
+		<version>2.1.3</version>
 	</parent>	
 
 ## Want to Help and improve it? ###
