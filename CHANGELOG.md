@@ -1,8 +1,12 @@
 ## Change log
 ----------------------
 
-Version 2.1.3-SNAPSHOT
+Version 2.1.3
 -------------
+
+CHANGED:
+
+- update of swing-components version to 5.0.2
 
 Version 2.1.2
 -------------
