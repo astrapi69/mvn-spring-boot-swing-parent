@@ -1,6 +1,17 @@
 ## Change log
 ----------------------
 
+Version 2.1.4
+-------------
+
+CHANGED:
+
+- update of parent version to 2.1.2.RELEASE
+- update of jcommons-lang dependency version to 5.1.1
+- update of miglayout-swing dependency version to 5.2
+- update of file-worker version to 5.1
+- update of swing-components version to 5.1
+
 Version 2.1.3
 -------------
 
